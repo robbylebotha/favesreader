@@ -6,19 +6,29 @@ import java.util.Scanner;
  * Class to read the text files
  */
 public class ReadFavoritesFile{
+    String favouritesFileLocation;
 
-    public ReadFavoritesFile(){
+    public ReadFavoritesFile(String favouritesFileLocation){
+        this.favouritesFileLocation = favouritesFileLocation;
         System.out.println("Reading Favorites file...");
     }
 
-    /**Return a hashmap of users
-     * @return HashMap<userID,userName>
+    /**
+     * Return a hashmap of iserIDs and voted color
+     * @return HashMap<userID,color>
      */
     public HashMap<String,String> getAllFavorites(){
+        /**
+         * The goal here is to read the txt file line by line,
+         * split the string line by spaces and insert the values
+         * into a <Key,Value> pair structure. This is specific to the
+         * txt file structure, if the structure changes, an exception will be
+         * thrown.
+         */
         HashMap<String,String> favesMap = new HashMap<>();
 
         try{
-            FileInputStream fis = new FileInputStream(".\\data\\favourites.txt");       
+            FileInputStream fis = new FileInputStream(favouritesFileLocation);       
             Scanner sc = new Scanner(fis);
             while(sc.hasNextLine()){
                 String currLine = sc.nextLine().trim().toLowerCase(); //avoid mistakes
@@ -29,8 +39,8 @@ public class ReadFavoritesFile{
                 favesMap.put(userID, color);
             }  
             sc.close();
-            // System.out.println("Size of map is: "
-            // + favesMap.size());
+            System.out.println("Total Votes: "
+            + favesMap.size());
             // System.out.println(favesMap);
             return favesMap;
 
@@ -39,7 +49,6 @@ public class ReadFavoritesFile{
             return null;
         }
 
-        
     }
     
 }
