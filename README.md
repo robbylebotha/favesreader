@@ -1,18 +1,42 @@
-## Getting Started
+## The Challenge
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+The challenge is to create a application that idnetifies the popularity of color themes on a website. A poll is sent out to users to vote on their favourite color. The poll data is saved in two txt files. We have to read those files and print out the most voted on color, and a list of users who voted on the color, in order.
 
-## Folder Structure
+> Tools: Java, Visual Studio, 2 Litres of Original Coca Cola, Imagination.  
 
-The workspace contains two folders by default, where:
+## My Approach
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+I chose to write the application in java as Im personally more comfortable and experienced in java(And in case you didn't know, java runs on 6 Billion devices world wide lol). My second option would have been Python, would've been sligthly easier, less code to read the flat files and also displaying the most voted on colors on a bar/pie chart would have been visually appealing I think. 
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+So the steps I followed are:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- Read the users file and save in an appropriate structure.
 
-## Dependency Management
+- Read the favourites file and save in an appropriate structure.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Write an algorith to figure out which color has the most votes.
+
+- Save the user IDs that voted for that color in a list.
+
+- Compare the above list with the saved user data and retrieve the name that the ID belongs to.
+
+- Print the results in console and also to a text file.
+
+- Text file created and opened automatically then program ends.
+
+> You can find this new file in `./data/results.txt`
+
+  
+
+## Challenges Faced
+
+My one issue was how the poll data was stored ie. plain text not comma seperated. This adds some extra steps in reading the file and can easily throw errors since it lacks structure. Storing the data in JSON format would be much safer and easier to process. But it's all good, the app "works on my machine" :)
+
+# Q&A
+> What advantages does this language offer for solving this problem?
+
+>It what ways does this language make it more difficult to solve this problem?
+
+>Did you do anything to make the solution run faster?
+
+
